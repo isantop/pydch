@@ -20,7 +20,7 @@ THIS SOFTWARE.
 from distutils.core import setup
 
 setup(name='pydch',
-    version='1.0.0',
+    version='1.0.1',
     description='Create a debian release from setup.py',
     url='https://github.com/isantop/pydch',
     author='Ian Santopietro',
