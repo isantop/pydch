@@ -17,7 +17,10 @@ class Py2Deb():
     def __init__(self, args):
         self.args = args
         self.current_directory = os.getcwd()
-        self.setup_path = os.path.join(current_directory, setup_name)
+        self.setup_path = os.path.join(
+            self.current_directory,
+            self.setup_name
+        )
 
         logging.addLevelName(30, 'OUTPUT')
 
@@ -28,16 +31,16 @@ class Py2Deb():
         self.log.addHandler(console)
 
 
-    def main():
+    def main(self):
 
         verbosity = 0
-        if args.verbose:
-            verbosity = args.verbose
+        if self.args.verbose:
+            verbosity = self.args.verbose
         if verbosity > 3:
             verbosity = 3
 
         level = {
-            0 : 'ERROR
+            0 : 'ERROR',
             1 : 'WARNING',
             2 : 'INFO',
             3 : 'DEBUG',
@@ -47,37 +50,37 @@ class Py2Deb():
         self.log.setLevel(console_level)
 
         edit = False
-        if args.edit:
+        if self.args.edit:
             edit = True
 
         force = False
-        if args.force_release:
+        if self.args.force_release:
             force = True
 
         distro = None
-        if args.distro:
-            distro = args.distro
+        if self.args.distro:
+            distro = self.args.distro
 
-        metadata = get_setup_lines(self.setup_path)
+        metadata = self.get_setup_lines(self.setup_path)
 
         version_command = 'dch -v %s' % metadata['version']
         edit_command = 'dch -e'
         release_command = 'dch -r ""'
 
         if edit:
-            run_command(edit_command)
+            self.run_command(edit_command)
         else:
-            run_command(version_command)
-            run_command(release_command)
+            self.run_command(version_command)
+            self.run_command(release_command)
 
         return 0
 
 
     def run_command(self, command, simulate=True):
-        if simulate = True:
+        if simulate == True:
             self.log.info("Simulating %s" % command)
         else:
-            self.log.info('Running %s' command)
+            self.log.info('Running %s' % command)
             command_list = shlex.split(command)
             subprocess.run(command_list, check=True)
 
@@ -88,8 +91,8 @@ class Py2Deb():
             for line in setup_file.readlines():
                 if "=" in line:
                     setup_line = line.split('=')
-                    setup_line[0] = clean_string(setup_line[0])
-                    setup_line[1] = clean_string(setup_line[1])
+                    setup_line[0] = self.clean_string(setup_line[0])
+                    setup_line[1] = self.clean_string(setup_line[1])
                     setup_dict[setup_line[0]] = setup_line[1]
 
         return setup_dict

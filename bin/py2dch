@@ -20,8 +20,8 @@ def main():
     parser.add_argument(
         '-f',
         '--force-release',
-        dest = 'force_release'
-        action='store_true',
+        dest = 'force_release',
+        action = 'store_true',
         help='Release even without modifying the changelog'
     )
     parser.add_argument(
@@ -39,8 +39,8 @@ def main():
     )
     args = parser.parse_args()
 
-    py_to_deb = py2debapp.Py2Deb()
-    py_to_deb.main(args)
+    py_to_deb = py2debapp.Py2Deb(args)
+    py_to_deb.main()
 
 if __name__ == '__main__':
     main()

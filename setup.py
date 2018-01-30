@@ -19,17 +19,13 @@ THIS SOFTWARE.
 
 from distutils.core import setup
 
-setup(name='kernelstub',
-    version='2.0.2',
-    description='Automatic kernel efistub manager for UEFI',
+setup(name='py2deb',
+    version='1.0.0',
+    description='Create a debian release from setup.py',
     url='https://launchpad.net/kernelstub',
     author='Ian Santopietro',
     author_email='isantop@gmail.com',
     license='ISC',
-    packages=['kernelstub'],
-    scripts=['bin/kernelstub'],
-    data_files=[
-        ('/etc/kernel/postinst.d', ['data/kernel/zz-kernelstub']),
-        ('/etc/initramfs/post-update.d', ['data/initramfs/zz-kernelstub']),
-        ('/etc/default', ['data/config/kernelstub.SAMPLE'])]
+    packages=['py2deb'],
+    scripts=['bin/py2deb'],
     )

@@ -1,0 +1,20 @@
+Source: python3-py2dch
+Maintainer: Ian Santopietro <isantop@gmail.com>
+Section: python
+Priority: optional
+Build-Depends: python3-all, debhelper (>= 7.4.3)
+Standards-Version: 3.9.1
+
+
+
+
+
+Package: python3-py2dch
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}, util-linux
+Description: Release a debian package from a python distutil setup.py file
+ This program creates a new release of a debian package with the information
+ presented in setup.py. Right now, this just means it uses the version. This
+ helps to keep the version of the debian package in sync with that of the Python
+ package.
+
