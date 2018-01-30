@@ -2,7 +2,7 @@
 
 import argparse
 
-from py2deb import py2debapp
+from pydch import pydchapp
 
 def main():
 
@@ -39,8 +39,8 @@ def main():
     )
     args = parser.parse_args()
 
-    py_to_deb = py2debapp.Py2Deb(args)
-    py_to_deb.main()
+    pydch = pydchapp.PyDch(args)
+    pydch.main()
 
 if __name__ == '__main__':
     main()

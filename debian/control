@@ -1,4 +1,4 @@
-Source: python3-py2dch
+Source: python3-pydch
 Maintainer: Ian Santopietro <isantop@gmail.com>
 Section: python
 Priority: optional
@@ -9,7 +9,7 @@ Standards-Version: 3.9.1
 
 
 
-Package: python3-py2dch
+Package: python3-pydch
 Architecture: all
 Depends: ${misc:Depends}, ${python3:Depends}, util-linux
 Description: Release a debian package from a python distutil setup.py file

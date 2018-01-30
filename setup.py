@@ -19,13 +19,13 @@ THIS SOFTWARE.
 
 from distutils.core import setup
 
-setup(name='py2deb',
+setup(name='pydch',
     version='1.0.0',
     description='Create a debian release from setup.py',
-    url='https://launchpad.net/kernelstub',
+    url='https://github.com/isantop/pydch',
     author='Ian Santopietro',
     author_email='isantop@gmail.com',
     license='ISC',
-    packages=['py2deb'],
-    scripts=['bin/py2deb'],
+    packages=['pydch'],
+    scripts=['bin/pydch'],
     )

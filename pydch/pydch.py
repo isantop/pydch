@@ -8,7 +8,7 @@ Copyright 2018 Ian Santopietro <isantop@gmail.com>
 
 import logging, os, subprocess, shlex
 
-class Py2Deb():
+class PyDch():
 
     current_directory = "/"
     setup_name = "setup.py"
