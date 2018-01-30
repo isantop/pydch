@@ -1,0 +1,46 @@
+#!/usr/bin/python3
+
+import argparse
+
+from py2deb import py2debapp
+
+def main():
+
+    parser = argparse.ArgumentParser(
+        prog = 'py2deb',
+        description = 'Release a debian package based on a python distutils ' +
+                      'setup file'
+    )
+    parser.add_argument(
+        '-e',
+        '--edit',
+        action='store_true',
+        help='Just edit the changelog. Equivalent to `dch -e`',
+    )
+    parser.add_argument(
+        '-f',
+        '--force-release',
+        dest = 'force_release'
+        action='store_true',
+        help='Release even without modifying the changelog'
+    )
+    parser.add_argument(
+        '-d',
+        '--distro',
+        metavar='<dist>',
+        help='The distribution component to set. The default is your ' +
+             'currently running distro.'
+    )
+    parser.add_argument(
+        '-v',
+        '--verbose',
+        action='count',
+        help='Make program output more verbose'
+    )
+    args = parser.parse_args()
+
+    py_to_deb = py2debapp.Py2Deb()
+    py_to_deb.main(args)
+
+if __name__ == '__main__':
+    main()
