@@ -1,5 +1,11 @@
+python3-pydch (1.0.2) artful; urgency=medium
+
+  * Fix debian packaging
+
+ -- Ian Santopietro <ian@system76.com>  Tue, 30 Jan 2018 14:47:53 -0700
+
 python3-pydch (1.0.0) artful; urgency=medium
 
   * Initial release. 
 
- -- Ian Santopietro <ian@system76.com>  Tue, 30 Jan 2018 14:10:39 -0700
+ -- Ian Santopietro <ian@system76.com>  Tue, 30 Jan 2018 14:13:48 -0700

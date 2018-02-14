@@ -69,6 +69,8 @@ class PyDch():
 
         if edit:
             self.run_command(edit_command, simulate=False)
+        elif force:
+            self.run_command(release_command, simulate=False)
         else:
             self.run_command(version_command, simulate=False)
             self.run_command(release_command, simulate=False)
